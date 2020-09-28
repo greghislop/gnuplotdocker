@@ -1,9 +1,9 @@
 FROM julia:latest
 
-# Docker GPU support using Nvidia Container Toolkit
-# https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
-#
-# $ docker run --rm -it --gpus all -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 <image> bash
+# sudo apt-get install -y x11-xserver-utils
+# docker build --tag julia-displaz:latest .
+# xhost +local:root
+# docker run --rm -it  --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" julia-displaz
 
 RUN apt update
 
